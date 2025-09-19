@@ -51,9 +51,13 @@
         "net9.0": {
           "targetAlias": "net9.0",
           "dependencies": {
-            "Azure.Security.KeyVault.Secrets": {
+            "Azure.Extensions.AspNetCore.Configuration.Secrets": {
               "target": "Package",
-              "version": "[4.8.0, )"
+              "version": "[1.4.0, )"
+            },
+            "Azure.Identity": {
+              "target": "Package",
+              "version": "[1.16.0, )"
             },
             "Microsoft.AspNetCore.OpenApi": {
               "target": "Package",

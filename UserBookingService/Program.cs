@@ -11,29 +11,25 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 //
-//var keyVaultUrl = "https://group-project-keyvault.vault.azure.net/";
-//builder.Configuration.AddAzureKeyVault(new Uri(keyVaultUrl), new DefaultAzureCredential());
+var keyVaultUrl = "https://group-project-keyvault.vault.azure.net/";
+builder.Configuration.AddAzureKeyVault(new Uri(keyVaultUrl), new DefaultAzureCredential());
 
-//var client = new SecretClient(new Uri(keyVaultUrl), new DefaultAzureCredential());
-//KeyVaultSecret dbSecret = await client.GetSecretAsync("DbConnectionString-GroupProject");
+var client = new SecretClient(new Uri(keyVaultUrl), new DefaultAzureCredential());
+KeyVaultSecret dbSecret = await client.GetSecretAsync("DbConnectionString-GroupProject");
 
-//builder.Services.AddDbContext<DataContext>(x => x.UseSqlServer(dbSecret.Value));
+builder.Services.AddDbContext<DataContext>(x => x.UseSqlServer(dbSecret.Value));
 //
-
-
-builder.Services.AddDbContext<DataContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 builder.Services.AddScoped<BookingService>();
 
 var app = builder.Build();
 
 //
-//using (var scope = app.Services.CreateScope())
-//{
-//    var db = scope.ServiceProvider.GetRequiredService<DataContext>();
-//    db.Database.Migrate();
-//}
+using (var scope = app.Services.CreateScope())
+{
+    var db = scope.ServiceProvider.GetRequiredService<DataContext>();
+    db.Database.Migrate();
+}
 //
 
 
