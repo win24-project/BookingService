@@ -1,0 +1,22 @@
+[
+  {
+    "ContainingType": "UserBookingService.Controllers.UserBookingController",
+    "Method": "CreateBooking",
+    "RelativePath": "api/UserBooking",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "UserBookingService.Controllers.UserBookingController",
+    "Method": "GetAllBookings",
+    "RelativePath": "api/UserBooking",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  }
+]
