@@ -334,3 +334,4 @@ D:\VS2022Projects\Projekt-Grupp\BookingService\UserBookingService\obj\Debug\net9
 D:\VS2022Projects\Projekt-Grupp\BookingService\UserBookingService\obj\Debug\net9.0\UserBookingService.pdb
 D:\VS2022Projects\Projekt-Grupp\BookingService\UserBookingService\obj\Debug\net9.0\UserBookingService.genruntimeconfig.cache
 D:\VS2022Projects\Projekt-Grupp\BookingService\UserBookingService\obj\Debug\net9.0\ref\UserBookingService.dll
+D:\VS2022Projects\Projekt-Grupp\BookingService\UserBookingService\bin\Debug\net9.0\Azure.Extensions.AspNetCore.Configuration.Secrets.dll

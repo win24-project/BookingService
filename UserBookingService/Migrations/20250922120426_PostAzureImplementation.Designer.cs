@@ -12,8 +12,8 @@ using UserBookingService.Data;
 namespace UserBookingService.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20250919125511_Initial")]
-    partial class Initial
+    [Migration("20250922120426_PostAzureImplementation")]
+    partial class PostAzureImplementation
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
