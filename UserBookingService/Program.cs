@@ -19,7 +19,10 @@ var client = new SecretClient(new Uri(keyVaultUrl), new DefaultAzureCredential()
 KeyVaultSecret dbSecret = await client.GetSecretAsync("DbConnectionString-GroupProject");
 
 builder.Services.AddDbContext<DataContext>(x => x.UseSqlServer(dbSecret.Value));
-//
+
+
+//builder.Services.AddDbContext<DataContext>(options =>
+//    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 builder.Services.AddScoped<BookingService>();
 
