@@ -2,6 +2,7 @@
 using UserBookingService.Data;
 using UserBookingService.Services;
 using Microsoft.AspNetCore.Authorization;
+using System.Security.Claims;
 
 namespace UserBookingService.Controllers
 {
@@ -18,17 +19,24 @@ namespace UserBookingService.Controllers
         }
 
         [HttpPost]
-public async Task<IActionResult> CreateBooking([FromBody] BookingRequestDto request)
-{
-    var booking = await _userBookingService.AddBookingAsync(request.GymClassId);
+        public async Task<IActionResult> CreateBooking([FromBody] BookingRequestDto request)
+        {
+            // Hämta UserID från JWT-token
+            var userIdString = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
 
-    return Ok(new
-    {
-        Message = "Ditt pass är bokat!",
-        booking.BookingId
-    });
-}
+            if (userIdString == null || !Guid.TryParse(userIdString, out var userId))
+            {
+                return Unauthorized("User ID saknas eller är ogiltigt.");
+            }
 
+            var booking = await _userBookingService.AddBookingAsync(request.GymClassId, userId);
+
+            return Ok(new
+            {
+                Message = "Ditt pass är bokat!",
+                booking.BookingId
+            });
+        }
 
         [HttpGet]
         public IActionResult GetAllBookings()
