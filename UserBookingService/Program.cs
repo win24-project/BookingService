@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Azure.Identity;
@@ -15,6 +16,19 @@ public class Program
         builder.Services.AddControllers();
         builder.Services.AddEndpointsApiExplorer();
         builder.Services.AddSwaggerGen();
+
+       builder.Services.AddAuthentication("Bearer")
+    .AddJwtBearer("Bearer", options =>
+    {
+        options.Authority = "https://group-project-auth.azurewebsites.net";
+        options.TokenValidationParameters = new Microsoft.IdentityModel.Tokens.TokenValidationParameters
+        {
+            ValidateAudience = false
+        };
+    });
+
+builder.Services.AddAuthorization();
+
 
         // LOKAL DATABAS VIA appsettings.json
         // builder.Services.AddDbContext<DataContext>(x =>
@@ -48,6 +62,9 @@ public class Program
             c.SwaggerEndpoint("/swagger/v1/swagger.json", "Booking API");
             c.RoutePrefix = string.Empty;
         });
+
+        app.UseAuthentication(); 
+        app.UseAuthorization();   
 
         app.MapControllers();
         app.Run();
