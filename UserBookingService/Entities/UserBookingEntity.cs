@@ -6,6 +6,8 @@ public class UserBookingEntity
 {
     [Key]
     public Guid BookingId { get; set; } = Guid.NewGuid();
+    public Guid GymClassId { get; set; }
+
 
 }
 
