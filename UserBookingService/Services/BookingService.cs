@@ -10,13 +10,19 @@ namespace UserBookingService.Services
 
         private DbSet<UserBookingEntity> Bookings => _context.Set<UserBookingEntity>();
 
-        public async Task<UserBookingEntity> AddBookingAsync()
-        {
-            var booking = new UserBookingEntity();
-            Bookings.Add(booking);
-            await _context.SaveChangesAsync();
-            return booking;
-        }
+        public async Task<UserBookingEntity> AddBookingAsync(Guid gymClassId, Guid userId)
+{
+    var booking = new UserBookingEntity
+    {
+        GymClassId = gymClassId
+        UserId = userId
+    };
+
+    Bookings.Add(booking);
+    await _context.SaveChangesAsync();
+    return booking;
+}
+
 
         public IEnumerable<UserBookingEntity> GetAllBookings()
         {
