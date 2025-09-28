@@ -4955,23 +4955,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\tweet\\.nuget\\packages\\": {},
+    "C:\\Users\\Emanuel\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Projects\\win24 project\\BookingService\\UserBookingService\\UserBookingService.csproj",
+      "projectUniqueName": "C:\\Users\\Emanuel\\source\\repos\\BookingService\\UserBookingService\\UserBookingService.csproj",
       "projectName": "UserBookingService",
-      "projectPath": "C:\\Projects\\win24 project\\BookingService\\UserBookingService\\UserBookingService.csproj",
-      "packagesPath": "C:\\Users\\tweet\\.nuget\\packages\\",
-      "outputPath": "C:\\Projects\\win24 project\\BookingService\\UserBookingService\\obj\\",
+      "projectPath": "C:\\Users\\Emanuel\\source\\repos\\BookingService\\UserBookingService\\UserBookingService.csproj",
+      "packagesPath": "C:\\Users\\Emanuel\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Emanuel\\source\\repos\\BookingService\\UserBookingService\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\tweet\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Emanuel\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -4997,9 +4997,9 @@
       "restoreAuditProperties": {
         "enableAudit": "true",
         "auditLevel": "low",
-        "auditMode": "direct"
+        "auditMode": "all"
       },
-      "SdkAnalysisLevel": "9.0.300"
+      "SdkAnalysisLevel": "9.0.100"
     },
     "frameworks": {
       "net9.0": {
@@ -5065,7 +5065,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.305/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.110/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
