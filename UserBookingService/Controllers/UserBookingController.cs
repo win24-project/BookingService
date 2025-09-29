@@ -3,6 +3,7 @@ using UserBookingService.Data;
 using UserBookingService.Services;
 using Microsoft.AspNetCore.Authorization;
 using System.Security.Claims;
+using UserBookingService.Entities;
 
 namespace UserBookingService.Controllers
 {

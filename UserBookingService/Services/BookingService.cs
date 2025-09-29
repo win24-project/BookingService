@@ -12,11 +12,11 @@ namespace UserBookingService.Services
 
         public async Task<UserBookingEntity> AddBookingAsync(Guid gymClassId, Guid userId)
 {
-    var booking = new UserBookingEntity
-    {
-        GymClassId = gymClassId
-        UserId = userId
-    };
+            var booking = new UserBookingEntity
+            {
+                GymClassId = gymClassId,
+                UserId = userId
+            };
 
     Bookings.Add(booking);
     await _context.SaveChangesAsync();
